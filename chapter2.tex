@@ -1,4 +1,4 @@
-\usepackage{}\chapter{Conjuntos de corte y ciclos}
+\chapter{Conjuntos de corte y ciclos}
 
 \lettrine[lines=5] {\initfamily \selectfont E} {l concepto} central de este capítulo es el de \textit{subgráfica generadora}. Además, abordaremos tres clases especiales de subgráficas: los \textit{conjuntos de corte}, las \textit{subgráficas pares} y los \textit{árboles generadores}. Recuérdese que, si $G$ es una gráfica, una subgráfica de $G$, digamos $H$, es \textit{generadora} si y sólo si $V(H)=V(G)$. Igualmente, vimos en el capítulo anterior que $G[S]$ es una \textit{subgráfica inducida por aristas} si y sólo si $E(G[S]) = S\subseteq E(G)$ y su conjunto de vértices queda determinado por los extremos de las aristas en $S$; y $G[S]$ es una \textit{subgráfica generadora inducida por aristas} si y sólo si $V(G[S]) = V(G)$ y $E(G[S]) = S\subseteq E(G)$. A lo largo de este trabajo, el símbolo ``$G[S]$" denotará a una subgráfica generadora inducida por el conjunto aristas $S$. 
 
@@ -27,7 +27,7 @@ Consideremos la gráfica del inciso $(a)$ de la figura \ref{fig:cjtosdecorte}. E
 
 \begin{ejem}\label{ejem:relativos}
 \begin{figure}[H]
-\vspace{-2cm}
+\vspace{-2.1cm}
     \centering
     \includegraphics[scale=0.6]{img/imgchapter2/cortesrelativos.jpg}
     \caption{}
@@ -416,7 +416,7 @@ Sea $T$ un árbol generador de $G$ y $S\subseteq G$. Consideremos
 $$
 B =\difsym_{b \in E(S)} \mathscr{B}_{b}. 
 $$
-Entonces $B$ es un conjunto de corte. Además, $B \cap E(T) = S$ y $B$ es el único conjunto de corte de $G$ con esta propiedad.
+Entonces $B$ es un conjunto de corte. Además, $B \cap E(T) = E(S)$ y $B$ es el único conjunto de corte de $G$ con esta propiedad.
 \end{lema}
 
 \begin{proof}
@@ -455,7 +455,7 @@ Sea $G$ una gráfica. Una subgráfica generadora de $G$ inducida por un conjunto
 
 
 
-\section{Gráficas pares de $G$}
+E\section{Gráficas pares de $G$}
 Decimos que una gráfica es \textit{par} \index{Gráfica! par} si y sólo si todos sus vértices tienen grado par. En particular, los ciclos son gráficas pares pues todos sus vértices tienen grado $2$; así como la gráfica vacía $\varnothing$, cuyos vértices tienen grado $0$. Note que, si $H$ es una subgráfica par de $G$, la subgráfica generadora inducida $G[E(H)]$ es también par, pues sólo se están añadiendo vértices aislados. Entonces, en esta sección, basta con enfocarnos en estudiar las subgráficas pares de $G$. Primero probaremos algunos resultados que relacionan a los conjuntos de corte con las gráficas pares.  
 
 \begin{lema} \label{lema1}
@@ -628,7 +628,7 @@ Por tanto, $C \cap \overline{T} \neq \varnothing$.
 
 De este resultado se desprende que la única subgráfica par contenida en $T$ es la subgráfica vacía $\varnothing$. Ahora tomemos una arista $c$ cualquiera  de $\overline{T}$ y supongamos que $x$ y $y$ son sus extremos. De la proposición \ref{prop:treepath}, sabemos que hay una única trayectoria $P$, contenida en $T$, que une a $x$ y a $y$. 
 
-Por tanto, la gráfica $T + c$ contiene al ciclo formado por la trayectoria $P$ y la arista $c$, llamado \index{Ciclo! fundamental}\textit{ciclo fundamental de $G$ con respecto a $T$ y a $c$}. Téngase en cuenta que diferentes árboles generadores determinan ciclos fundamentales distintos. Cuando esté implícito el árbol con el que estemos trabajando, escribiremos como $\mathscr{C}_{c}$ al ciclo fundamental con respecto a $c$. Si $G$ es inconexa, sus ciclos fundamentales, con respecto a algún bosque generador maximal, son los ciclos fundamentales de cada componente conexa. 
+Por tanto, la gráfica $T + c$ contiene al ciclo formado por la trayectoria $P$ y la arista $c$, llamado \index{Ciclo! fundamental}\textit{ciclo fundamental de $G$ con respecto a $T$ y a $c$}. Téngase en cuenta que diferentes árboles generadores determinan ciclos fundamentales distintos. Cuando esté implícito el árbol con el que estemos trabajando, escribiremos como $\mathscr{C}_{c}$ a la subgráfica generadora inducida por el ciclo fundamental con respecto a $c$ (y, por comodidad, esta subgráfica también será llamada \textit{ciclo fundamental}). Si $G$ es inconexa, sus ciclos fundamentales, con respecto a algún bosque generador maximal, son los ciclos fundamentales de cada componente conexa. 
 
 Sabemos que hay $m - n + 1$ aristas en $\overline{T}$, entonces $G$ debe contener $m - n +1$ ciclos fundamentales con respecto a $T$.  Por último, si $G$ tiene $c$ componentes conexas y, puesto que hay $m - n + c$ aristas en el complemento de cualquier bosque generador maximal, necesariamente $G$ tiene $m-n+c$ ciclos fundamentales.
 
@@ -645,7 +645,7 @@ $$
  \begin{proof}
  Que $H$ sea par se da por el teorema \ref{teo:difsimciclos}. Por otro lado, nótese que
 \begin{align*}
-    C \cap \overline{T} &=(\difsym_{c \in E(S)} \mathscr{C}_{c}) \cap \overline{T} \\
+    H \cap \overline{T} &=(\difsym_{c \in E(S)} \mathscr{C}_{c}) \cap \overline{T} \\
              &=\difsym_{c \in E(S)} (\mathscr{C}_{c} \cap T) \\
              &=G\Big[\difsym_{c\in E(S)} c\Big] \\
              &= S.
@@ -736,12 +736,6 @@ Consideremos a $K_{4}$, la gráfica completa de cuatro vértices (inciso $(a)$ d
  
  Finalmente el \textit{conjunto de corte de $D$ asociado a $X$} \index{Conjunto de corte! de una digráfica} es la unión del excorte y el incorte respectivo, es decir, $\partial(X) := \partial^{+}(X) \cup \partial^{-}(X)$. Es sencillo observar que $\partial^{+}(X) = \partial^{-}(\overline{X})$. En la figura \ref{fig:excorteincorte} mostramos un excorte y un incorte de la digráfica del inciso $(a)$, con $X=\{u_{2},u_{3},u_{5}\}$.
 
- \begin{figure}[H]
-    \centering
-\includegraphics[scale=0.18]{img/imgchapter2/ExcorteIncorte.jpg}
-    \caption{}
-    \label{fig:excorteincorte}
-\end{figure}
  
 
 Un uso de esta nueva notación es la de reescribir la definición de conexidad fuerte que dimos en un principio. En efecto, $D$ es \textit{fuertemente conexa} si y sólo si, para todo $X \subseteq V(D)$, $\partial^{+}(X) \neq \emptyset$. 
@@ -755,6 +749,14 @@ Asimismo, recordando la definición de la matriz de incidencia $\mathbf{M}_{D} =
 \hspace{0.7em} 0, & \text{en otro caso}
 \end{cases}
 \end{equation}
+
+ \begin{figure}[H]
+    \centering
+\includegraphics[scale=0.18]{img/imgchapter2/ExcorteIncorte.jpg}
+    \caption{}
+    \label{fig:excorteincorte}
+\end{figure}
+
 Si $G:=G(D)$ es la gráfica subyacente de $D$, observamos también que los elementos en $\partial_{G}(X)$ son los mismos que en $\partial_{D}(X)$ pero sin considerar direcciones. De aquí que un conjunto de aristas es un corte en $G$ si y sólo si el correspondiente conjunto de arcos es un corte en $D$.
 
 Lo anterior nos abre paso para definir cortes minimales en digráficas. Así, un conjunto de corte $\partial_{D}(X)$ es \textit{minimal} \index{Conjunto de corte! minimal en una digráfica} en $D$ si y sólo si $\partial_{G}(X)$ es un corte minimal en $G$. También diremos que un conjunto de corte es \textit{dirigido} si $\partial(X) = \partial^{+}(X)$, o sea, $\partial^{-}(X)=\emptyset$.
