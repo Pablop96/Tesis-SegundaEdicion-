@@ -1,6 +1,6 @@
 \chapter{Espacios vectoriales}
 
-\lettrine[lines=6] {\initfamily \selectfont H} {emos} llegado a la parte central de esta tesis. En el capítulo anterior definimos y describimos las propiedades de los conjuntos de corte y las subgráficas pares de una gráfica $G$. El lector observador podrá haberse dado cuenta que la operación \textit{diferencia simétrica} $\triangle$ jugó un papel fundamental. En este capítulo estaremos dedicados a describir los diferentes espacios vectoriales asociados a las gráficas y digráficas. Posteriormente, estudiaremos sus relaciones con sus matrices de incidencia.
+\lettrine[lines=7] {\initfamily \selectfont H} {emos} llegado a la parte central de esta tesis. En el capítulo anterior definimos y describimos las propiedades de los conjuntos de corte y las subgráficas pares de una gráfica $G$. El lector observador podrá haberse dado cuenta que la operación \textit{diferencia simétrica} $\triangle$ jugó un papel fundamental. En este capítulo estaremos dedicados a describir los diferentes espacios vectoriales asociados a las gráficas y digráficas. Posteriormente, estudiaremos sus relaciones con sus matrices de incidencia.
 
 \section{Espacios en gráficas}
 A menos que se mencione lo contrario, en esta sección supondremos que $G$ es una gráfica conexa con $n$ vértices y $m$ aristas, de tal manera que $V(G)=\{u_{1}, \ldots, u_{n}\}$ y $A(G) = \{e_{1}, \ldots, e_{m}\}$.
@@ -13,14 +13,14 @@ Podemos también definir un producto interior en $\mathcal{E}(G)$ bajo el campo 
 $$
 \lambda \cdot H =\left\{\begin{matrix}
 H, & \lambda = 1  \\
-\varnothing, & \lambda = 0
+\varnothing, & \lambda = 0.
 \end{matrix}\right.
 $$
 
     \index{Espacio! de aristas}Debido a la naturaleza y propiedades de la diferencia simétrica $\triangle$, es muy fácil darse cuenta que la terna $\Big(\mathcal{E}(G), \triangle, \cdot\Big)$ es un espacio vectorial sobre el campo $GF(2)$. Es por esto que a $\mathcal{E}(G)$ se le conoce como el \textit{espacio de aristas de} $G$. 
 
 
-Las subgráficas generadoras inducidas $G[\{e_{i}\}]$ (es decir, tomamos cada arista de $G$ como una subgráfica generadora) forman una base de $\mathcal{E}(G)$. En efecto, $\Big\{G[\{e_{i}\}]\Big|\:\! i = 1,\ldots, m\Big\}$ es un conjunto generador pues, para toda $H \in \mathcal{E}(G)$, $$H = \difsym_{e \in E(H)} G[\{e\}]$$. Además, es linealmente independiente debido a que $\lambda_{1}G[\{e_{1}\}] \triangle \cdots \triangle \lambda_{m}G[\{e_{m}\}] = \varnothing$ si y sólo si, para toda $i = 1, \ldots, m$, $\lambda_{i}=0$,porque $\varnothing$ no tiene aristas. Por lo tanto, $\Big\{G[\{e_{i}\}]\Big|\:\! i = 1,\ldots, m\Big\}$ es una base de $\mathcal{E}(G)$.
+Las subgráficas generadoras inducidas $G[\{e_{i}\}]$ (es decir, tomamos cada arista de $G$ como una subgráfica generadora) forman una base de $\mathcal{E}(G)$. En efecto, $\Big\{G[\{e_{i}\}]\Big|\:\! i = 1,\ldots, m\Big\}$ es un conjunto generador pues, para toda $H \in \mathcal{E}(G)$, $$H = \difsym_{e \in E(H)} G[\{e\}].$$ Además, es linealmente independiente debido a que $\lambda_{1}G[\{e_{1}\}] \triangle \cdots \triangle \lambda_{m}G[\{e_{m}\}] = \varnothing$ si y sólo si, para toda $i = 1, \ldots, m$, $\lambda_{i}=0$,porque $\varnothing$ no tiene aristas. Por lo tanto, $\Big\{G[\{e_{i}\}]\Big|\:\! i = 1,\ldots, m\Big\}$ es una base de $\mathcal{E}(G)$.
 
 De lo anterior, concluimos que $\dim(\mathcal{E}(G)) = m$. Una consecuencia de conocer una base de $\mathcal{E}(G)$ y su dimensión es que podemos saber el número total de elementos en el espacio de aristas. Ya que nuestro campo $GF(2)$ es finito y consta de dos elementos (el $0$ y el $1$), tomar combinaciones lineales de la base es equivalente a tomar subconjuntos de ésta. 
 
@@ -194,11 +194,11 @@ Una forma inmediata de identificar a $\mathcal{E}(G)$ con $(GF(2))^{m}$ se descr
  $$
  \chi_{H}(e) = \left\{\begin{matrix}
 1, & \text{si} \hspace{1.5mm} e \in E(H) \\ 
-0, & \text{si} \hspace{1.5mm} e\notin E(H)
-\end{matrix}\right..
+0, & \text{si} \hspace{1.5mm} e\notin E(H).
+\end{matrix}\right.
  $$
  
- \index{Vector de incidencia} Como el conjunto de aristas de $G$ ya está ordenado, es decir, que $E(G) = \{e_{1}, \ldots, e_{m}\}$, las funciones de incidencia pueden escribirse como vectores. En efecto, dada $H \in \mathcal{E}(G)$, identificamos la función de incidencia de $H$, con el vector $\boldsymbol{\chi}_{H}^{\textnormal{T}}:= (\chi_{H}(e_{1}), \ldots, \chi_{H}(e_{m})) \in (GF(2))^{m}$ y lo llamamos \textit{vector de incidencia de} $H$.
+ \index{Vector! de incidencia} Como el conjunto de aristas de $G$ ya está ordenado, es decir, que $E(G) = \{e_{1}, \ldots, e_{m}\}$, las funciones de incidencia pueden escribirse como vectores. En efecto, dada $H \in \mathcal{E}(G)$, identificamos la función de incidencia de $H$, con el vector $\boldsymbol{\chi}_{H}^{\textnormal{T}}:= (\chi_{H}(e_{1}), \ldots, \chi_{H}(e_{m})) \in (GF(2))^{m}$ y lo llamamos \textit{vector de incidencia de} $H$.
  
  Podemos definir ahora una función que hace corresponder cada subgráfica generadora con su respectivo vector de incidencia, a saber, la función $\boldsymbol{\Phi} \colon \mathcal{E}(G) \rightarrow (GF(2))^{m}$ tal que, para cada $H \in \mathcal{E}(G)$, $\boldsymbol{\Phi}(H) = \boldsymbol{\chi}_{H}$. Entonces $\boldsymbol{\Phi}$ es un isomorfismo entre $\mathcal{E}(G)$ y el espacio $(GF(2))^{m}$.
  En la imagen \ref{fig:grafovector1} mostramos (de forma simbólica) los vectores de incidencia de algunas subgráficas de la gráfica de la figura \ref{fig:grafoejemplo}.
@@ -216,7 +216,7 @@ Como el isomorfismo $\boldsymbol{\Phi}$ preserva las operaciones entre los espac
 
 
 \begin{teo} \label{teo:xor}
-Sea $G$ una gráfica cualquiera. Para cualesquiera $H_{1}, H_{2} \in \mathcal{E}(G)$, se cumple que $$\boldsymbol{\chi}_{H_{1} \triangle H_{2}} = \boldsymbol{\chi}_{H_1} \oplus \boldsymbol{\chi}_{H_2}$$.
+Sea $G$ una gráfica cualquiera. Para cualesquiera $H_{1}, H_{2} \in \mathcal{E}(G)$, se cumple que $$\boldsymbol{\chi}_{H_{1} \triangle H_{2}} = \boldsymbol{\chi}_{H_1} \oplus \boldsymbol{\chi}_{H_2}.$$
 \end{teo}
 
 \begin{ejem}
@@ -461,9 +461,7 @@ supp(q) := \{a \in A | q(a) \neq 0\}.$ Cabe aclarar que será común considerar 
 
 \subsection{Espacio de tensiones $\mathcal{B}(D)$}
 
- Consideremos la matriz de incidencia $\mathbf{M}:=\mathbf{M}_{D} \in \mathbb{M}_{n \times m}(\mathbb{R})$ y tomemos $\mathbf{g}\in \mathsf{R}(\mathbf{M})$.
-
-Suponiendo que los renglones de $\mathbf{M}$ son los vectores $\mathbf{r}_{u_1}, \ldots, \mathbf{r}_{u_n}$, entonces existen escalares $p_{u_{1}}, \ldots, p_{u_{n}}$ tales que $\mathbf{g} = p_{u_{1}}\mathbf{r}_{u_{1}} + \cdots + p_{u_{n}}\mathbf{r}_{u_{n}}$. En otras palabras:
+ Consideremos la matriz de incidencia $\mathbf{M}:=\mathbf{M}_{D} \in \mathbb{M}_{n \times m}(\mathbb{R})$ y tomemos $\mathbf{g}\in \mathsf{R}(\mathbf{M})$. Suponiendo que los renglones de $\mathbf{M}$ son los vectores $\mathbf{r}_{u_1}, \ldots, \mathbf{r}_{u_n}$, entonces existen escalares $p_{u_{1}}, \ldots, p_{u_{n}}$ tales que $\mathbf{g} = p_{u_{1}}\mathbf{r}_{u_{1}} + \cdots + p_{u_{n}}\mathbf{r}_{u_{n}}$. En otras palabras:
 $$
 \mathbf{g}^{\textnormal{T}} = \begin{bmatrix}
 p_{u_{1}} & \cdots & p_{u_{n}} 
@@ -510,15 +508,15 @@ $$
 g_{\partial(X)}(a) = \left\{\begin{matrix}
 \quad1, & a \in \partial^{+}(X)\\ 
 \ -1, & a \in \partial^{-}(X)\\
-\quad 0, & a \notin \partial(X) 
-\end{matrix}\right..
+\quad 0, & a \notin \partial(X).
+\end{matrix}\right.
 $$
 Verifiquemos que $g\in \mathsf{R}(\mathbf{M})$. Consideramos el potencial $p$ cuya de regla de correspondencia es
 $$
 p(v) = \left\{\begin{matrix}
 1, & v \in X\\ 
-0, & v \notin X\\
-\end{matrix}\right..
+0, & v \notin X.
+\end{matrix}\right.
 $$
 Entonces 
 $$
@@ -526,8 +524,8 @@ $$
 \left\{\begin{matrix}
 \quad 1, & t(a) \in X \quad y \quad h(a) \notin X \\ 
 \ -1, & h(a) \in X \quad y \quad t(a) \notin X\\
-\quad 0, & \{t(a), h(a)\} \subseteq X
-\end{matrix}\right..
+\quad 0, & \{t(a), h(a)\} \subseteq X.
+\end{matrix}\right.
 $$
 Por consiguiente,
 \begin{align*}
@@ -659,7 +657,7 @@ Por otro lado, tomemos $\mathbf{g} \in \mathsf{R}(\mathbf{M}_{D})$. Entonces exi
 \mathbf{O} & \cdots & \mathbf{M}_{F_{c}}
 \end{bmatrix}\\ &= \begin{bmatrix}
  \mathbf{p}_{1}^{\textnormal{T}}\mathbf{M}_{F_{1}} & \cdots &  \mathbf{p}_{c}^{\textnormal{T}}\mathbf{M}_{F_{c}}
-\end{bmatrix}
+\end{bmatrix}.
 \end{align*}
 De donde $\mathbf{g}_{i}^{\textnormal{T}} = \mathbf{p}_{i}^{\textnormal{T}}\mathbf{M}_{F_{i}}$, i.e., cada $\mathbf{g}_{i}$ es una tensión en $\mathcal{B}(F_{i})$. Y así, deducimos que
 
@@ -751,7 +749,7 @@ $$
 f_{C}(a)\left\{\begin{matrix}
 \quad 1, & a \in C^{+} \\ 
 \ -1, & a \in C^{-}\\ 
-\quad 0, &a \notin C
+\quad 0, &a \notin C.
 \end{matrix}\right.
 $$
 Veamos por qué, de hecho, $f_{C}$ es una circulación. Consideremos un vértice $v$ de $D$. Ya que $f_{C}$ se anula en arcos que no pertenecen a $C$, obtenemos que
@@ -849,7 +847,7 @@ Como,  $Ker(\mathbf{M}_{\mathcal{F}_{i}}) = \mathcal{C}(\mathcal{F}_{i})$, enton
 \mathbf{0}\\
 \vdots\\ 
 \mathbf{0}
-\end{bmatrix}
+\end{bmatrix}.
 \end{align*}
 
 Entonces $\mathbf{M}_{F_{i}}\mathbf{f}_{1} = \mathbf{0}$, es decir, $\mathbf{f}_{i}$ es una circulación en $\mathcal{C}(F_{i})$, de donde 
@@ -978,7 +976,7 @@ Por tanto, considerando el orden que le dimos a los arcos de $D$, la matriz $\ma
 $$
 \mathbf{B}_{f} = \begin{bmatrix}
 \mathbf{I}_{\rho} & \mathbf{K} 
-\end{bmatrix}
+\end{bmatrix}.
 $$
 Luego, $rank(\mathbf{B}_{f}) = \rho = n-1$. Ya que hay $n -1$ renglones en $\mathbf{B}_{f}$, éstos son linealmente independientes. Esto es, que el conjunto de tensiones fundamentales  $\{\mathbf{g}_{\mathscr{B}_{b_{1}}}, \ldots, \mathbf{g}_{\mathscr{B}_{b_{\rho}}} \}$ es linealmente independiente. Dado que $\dim(\mathcal{B}(D)) = n -1$, concluimos que el conjunto de tensiones fundamentales es una base de $\mathcal{B}(D)$.
 

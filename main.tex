@@ -7,19 +7,29 @@
 \usepackage{makeidx}
     \makeindex
 %\usepackage{mathpazo}
+%\usepackage[style=numeric]{biblatex}
+\DeclareNameAlias{default}{last-first}
+
+\usepackage{subcaption}
+
+%\usepackage[numbers]{natbib}
 
 % \geometry{ }
     
 \input GoudyIn.fd
 \newcommand*\initfamily{\usefont{U}{GoudyIn}{xl}{n}}
+%\bibliographystyle{apa}
+
     \begin{document}
         \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}} %Formato para los nombres de las figuras
 
         \frontmatter %Numeración romana
            \addtocounter{page}{-1} \includepdf[pages=-]{img/PortadaTesis}
            \blankpage{}
+           
+           \import{./}{preface.tex}
            \import{./}{thanks.tex}
-            \import{./}{preface.tex}
+
 
             \tableofcontents
 
@@ -29,10 +39,14 @@
             \import{./}{chapter2.tex}
             \import{./}{chapter3.tex}
             \import{./}{chapter4.tex}
-
+        
+        
+        
         \printbibliography[heading=bibintoc,title={Bibliografía}]
-
+        
+        \addcontentsline{toc}{chapter}{Índice Alfabético}
         \printindex
+  
   
         
     \end{document}

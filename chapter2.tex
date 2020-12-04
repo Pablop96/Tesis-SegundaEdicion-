@@ -217,7 +217,7 @@ $$G=\difsym_{j=1}^{c} F_{j}.$$
 Llamamos \textit{conjunto de corte minimal de} \index{Conjunto de corte! minimal} $G$ (en \cite{Bondy}, los autores le llaman \textit{bond}) a un conjunto de corte no vacío con la propiedad de que ninguno de sus subconjuntos propios, no vacíos, es otro conjunto de corte. Esto implica que, $B$ es un corte minimal de $G$ y $S$ es un conjunto de corte tal que $S\subseteq B$, necesariamente $B=S$.
 
  En general, un conjunto de corte \textit{divide} a $G$ en, al menos, dos componentes conexas. No obstante, el teorema siguiente nos asegura que los cortes minimales son aquellos que dividen a una gráfica conexa en, \textit{exactamente}, dos componentes. Recuérdese que $G[X]$ es la gráfica inducida por el conjunto de vértices $X$.
-
+\vspace{1 cm}
 \begin{teo} \label{teo:caracterizacionbond}
 Sean $G$ una gráfica conexa y $X$ un subconjunto de vértices de $G$, de tal manera que $\partial(X) \neq \emptyset$. Entonces $\partial(X)$ es un conjunto de corte minimal si y sólo si $G[X]$ y $G[\bar{X}]$ son conexas. 
 \end{teo}
@@ -395,7 +395,7 @@ Entonces $\partial_{G}(X)\triangle B \subseteq E(\overline{T})$. Como el único 
 
 \begin{ejem} \label{ejem:cortesfundamentales}
 \begin{figure}[H]
-\vspace{-1.5cm}
+\vspace{-0.5 cm}
     \centering
     \includegraphics[scale = 0.18]{img/imgchapter2/bondminimales.jpg}
     \caption{}
@@ -445,7 +445,7 @@ Sea $\partial(X)$ un conjunto de corte cualquiera de $G$. Hacemos $S= \partial(X
 En el caso que $G$ sea una gráfica inconexa, se toma un bosque generador maximal y la construcción de sus cortes fundamentales es análoga. Como los cortes fundamentales son, en particular, cortes minimales, entonces los cortes fundamentales de $G$ serán los cortes fundamentales de cada componente conexa; y los teoremas que hemos probado siguen siendo válidos para gráficas inconexas (con sus respectivas modificaciones). Si $G$ tiene $n$ aristas y $c$ componentes conexas, entonces sabemos que sus bosques generadores maximales tienen $n-c$ aristas; luego, $G$ tiene $n - c$ conjuntos de corte fundamentales. 
 
 El teorema previo garantiza la \textit{unicidad} de la representación de los conjuntos de corte (lo que no aseguraba el teorema \ref{teo:unionajenademinimales}). Además, el teorema que acabamos de probar nos permite caracterizar de manera única a las subgráficas generadoras inducidas por conjuntos de corte (análogo al \ref{cor:unionajenademinimalesgeneradores}). Esta unicidad de la que hablamos será importante en el capítulo 3.
-
+\vspace{1 cm}
 \begin{cor}\label{cor:DifSimUnicaDeFundamentales}
 Sea $G$ una gráfica. Una subgráfica generadora de $G$ inducida por un conjunto de corte puede expresarse de manera única como una diferencia simétrica de subgráficas generadoras de $G$ inducidas por conjuntos de corte fundamentales.
 \end{cor}
@@ -455,7 +455,7 @@ Sea $G$ una gráfica. Una subgráfica generadora de $G$ inducida por un conjunto
 
 
 
-E\section{Gráficas pares de $G$}
+\section{Gráficas pares de $G$}
 Decimos que una gráfica es \textit{par} \index{Gráfica! par} si y sólo si todos sus vértices tienen grado par. En particular, los ciclos son gráficas pares pues todos sus vértices tienen grado $2$; así como la gráfica vacía $\varnothing$, cuyos vértices tienen grado $0$. Note que, si $H$ es una subgráfica par de $G$, la subgráfica generadora inducida $G[E(H)]$ es también par, pues sólo se están añadiendo vértices aislados. Entonces, en esta sección, basta con enfocarnos en estudiar las subgráficas pares de $G$. Primero probaremos algunos resultados que relacionan a los conjuntos de corte con las gráficas pares.  
 
 \begin{lema} \label{lema1}
@@ -746,7 +746,7 @@ Asimismo, recordando la definición de la matriz de incidencia $\mathbf{M}_{D} =
     \begin{cases}
 \hspace{0.7em} 1, & a \in \partial^{+}(v)\\ 
 -1, & a \in \partial^{-}(v)\\ 
-\hspace{0.7em} 0, & \text{en otro caso}
+\hspace{0.7em} 0, & \text{en otro caso}.
 \end{cases}
 \end{equation}
 
