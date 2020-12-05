@@ -1,10 +1,10 @@
 \chapter{Algunas aplicaciones}
 
-\lettrine [lines=5] {\initfamily \selectfont E} {ste} último capítulo está dedicado a la exploración de algunas de las diversas consecuencias que ha tenido la combinación del Álgebra Lineal y la Teoría de Gráficas. Advertimos al lector que muchos de los teoremas que estableceremos aquí quedarán sin demostración pues están fuera del alcance de la tesis. 
+\lettrine [lines=5] {\initfamily \selectfont E} {ste} último capítulo está dedicado a la exploración de algunas de las consecuencias que ha tenido la combinación del Álgebra Lineal y la Teoría de Gráficas. Advertimos al lector que muchos de los teoremas que estableceremos aquí quedarán sin demostración pues están fuera del alcance de la tesis. 
 
 
 \section{Otras matrices asociadas a gráficas y digráficas}
-Al final del capítulo anterior hicimos uso de ciertas matrices con el propósito de construir bases para los espacios $\mathcal{B}(D)$ y $\mathcal{C}(D)$. En esta sección exploraremos con más detalle estás ideas. Puede consultarse también \cite{Deo,Seshu,Gross}. Supondremos de ahora en adelante que $G$ es una gráfica, con $n$ vértices y $m$ aristas. También vamos a asumir que $G$ tiene $k$ conjuntos de corte minimales: $B_{1}, \ldots, B_{k}$; y $q$ ciclos: $C_{1},\ldots, C_{q}$. Aclaramos que $G$ puede ser conexa o no. 
+Al final del capítulo anterior hicimos uso de ciertas matrices con el propósito de construir bases para los espacios $\mathcal{B}(D)$ y $\mathcal{C}(D)$. En esta sección exploraremos con más detalle estas ideas. Puede consultarse también \cite{Deo,Seshu,Gross}. Supondremos de ahora en adelante que $G$ es una gráfica, con $n$ vértices y $m$ aristas. También vamos a asumir que $G$ tiene $k$ conjuntos de corte minimales: $B_{1}, \ldots, B_{k}$; y $q$ ciclos: $C_{1},\ldots, C_{q}$. Aclaramos que $G$ puede ser conexa o no. 
 
 De igual manera, $D$ denotará una digráfica, con $n$ vértices y $m$ arcos. También supondremos que tiene $k$ cortes minimales y $q$ ciclos, para los cuales usaremos la misma notación que los cortes y ciclos de $G$. $T$ denotará un bosque generador maximal tanto para $G$ como para $D$.
 
@@ -37,7 +37,7 @@ $S \subseteq E(G)$. Entonces $\{\mathbf{b}_{e} | e \in S\}$ es una base para el 
 
 Hasta aquí, el lector podrá darse cuenta que las matrices de corte y las de incidencias son muy parecidas.
 
-\index{Matriz base! de cortes de una gráfica} Una \textit{matriz base de cortes} es una matriz cuyos renglones forman una base para el espacio $\overrightarrow{\mathcal{B}}(D)$. Obsérvese que su tamaño es $\rho(G) \times m$. Es sencillo verificar que estas matrices cumplen el teorema anterior. Aún más, podemos confirmar lo siguiente.
+\index{Matriz base! de cortes de una gráfica} Una \textit{matriz base de cortes de una gráfica $G$} es una matriz cuyos renglones forman una base para el espacio $\overrightarrow{\mathcal{B}}(G)$. Obsérvese que su tamaño es $\rho(G) \times m$. Es sencillo verificar que estas matrices cumplen el teorema anterior. Aún más, podemos confirmar lo siguiente.
 
 \begin{teo} \label{teo:submatricesmatridecortes}
 Si $\mathbf{Q}$ es una matriz base de cortes, entonces cualquiera de sus submatrices cuadradas, de tamaño $\rho \times \rho$, es no singular si y sólo si sus columnas corresponden a las aristas de algún bosque generador maximal de $G$.
@@ -72,7 +72,7 @@ $$
 
 Es fácil deducir que  $\mathsf{R}(\mathbf{B}) =\mathcal{B}(D)$ y, por tanto, $Ker(\mathbf{B}) = \mathcal{C}(D)$. Luego, $rank(\mathbf{B}) = \rho(D)$ y $null(\mathbf{B}) = \mu(D)$. Véase la figura \ref{fig:matrizdecortesdirigidos}.
 
-\index{Matriz base! de cortes de una digráfica}Una \textit{matriz base de cortes de $D$} es la matriz cuyos renglones son una base para el espacio de tensiones $\mathcal{B}(D)$. Además las relaciones de dependencia lineal que se tenían para gráficas, aquí también se siguen cumpliendo, esto es, que las columnas linealmente independientes de $\mathbf{B}$ corresponden a digráficas sin ciclos.
+\index{Matriz base! de cortes de una digráfica}Una \textit{matriz base de cortes de la digráfica $D$} es la matriz cuyos renglones son una base para el espacio de tensiones $\mathcal{B}(D)$. Además, las relaciones de dependencia lineal son las mismas: las columnas linealmente independientes de $\mathbf{B}$ corresponden a digráficas sin ciclos.
 
 $\mathbf{B}_{f}$ también denota a la matriz base de cortes cuyos renglones son las tensiones fundamentales asociadas a un árbol generador maximal de $D$. Por supuesto, ordenando de manera adecuada las tensiones fundamentales y los arcos $A(D) = A(\overline{T}) \cup A(T)$, podemos escribir:
 $$
@@ -177,7 +177,7 @@ Aún más, si $\mathbf{\widehat{M}}$ es la matriz de incidencia reducida, y $\ma
 Recordando que las submatrices cuadradas de $(n-c) \times (n-c)$, no singulares, de $\mathbf{\widehat{M}}$, corresponden a bosques generadores maximales, enunciamos el corolario que sigue.
 
 \begin{cor}
-Sea $T$ un bosque generador maximal de una gráfica $G$ (o de una digráfica $D$). Supongamos que las columnas de las matrices  $\mathbf{\widehat{M}}$, $\mathbf{B}_{f}$, $\mathbf{C}_{f}$ se han arreglado según $E(G) = E(\overline{T}) \cup E(T)$ \\(o $A(D) = A(\overline{T}) \cup A(T)$), de forma que $\mathbf{\widehat{M}} = \begin{bmatrix} \mathbf{\widehat{M}}_{\overline{T}} & |& \mathbf{\widehat{M}}_{T} \end{bmatrix}$, $\mathbf{B}_{f} = \begin{bmatrix} \mathbf{\overline{T}} & |& \mathbf{I}_{\rho} \end{bmatrix}$ y $\mathbf{C}_{f} = \begin{bmatrix} \mathbf{I}_{\mu} & |& \mathbf{T} \end{bmatrix}$. Entonces podemos afirmar que las matrices de cortes y ciclos fundamentales (tensiones y circulaciones)son de la forma:
+Sea $T$ un bosque generador maximal de una gráfica $G$ (o de una digráfica $D$). Supongamos que las columnas de las matrices  $\mathbf{\widehat{M}}$, $\mathbf{B}_{f}$, $\mathbf{C}_{f}$ se han arreglado según $E(G) = E(\overline{T}) \cup E(T)$ \\(o $A(D) = A(\overline{T}) \cup A(T)$), de forma que $\mathbf{\widehat{M}} = \begin{bmatrix} \mathbf{\widehat{M}}_{\overline{T}} & |& \mathbf{\widehat{M}}_{T} \end{bmatrix}$, $\mathbf{B}_{f} = \begin{bmatrix} \mathbf{\overline{T}} & |& \mathbf{I}_{\rho} \end{bmatrix}$ y $\mathbf{C}_{f} = \begin{bmatrix} \mathbf{I}_{\mu} & |& \mathbf{T} \end{bmatrix}$. Entonces podemos afirmar que las matrices de cortes y ciclos fundamentales (tensiones y circulaciones) son de la forma:
 \begin{align*}
     \mathbf{B}_{f} &= \begin{bmatrix} \mathbf{\widehat{M}}_{T}^{-1}\mathbf{\widehat{M}}_{\overline{T}} & |& \mathbf{I}_{\rho} \end{bmatrix} \\
     \mathbf{C}_{f} &= \begin{bmatrix} \mathbf{I}_{\mu} & |& -\mathbf{\widehat{M}}_{\overline{T}}^{\textnormal{T}}(\mathbf{\widehat{M}}_{T}^{\textnormal{T}})^{-1}  \end{bmatrix}
@@ -218,8 +218,8 @@ Haremos uso de una fórmula que nos permite calcular el determinante de un produ
 
 Si $\mathbf{A}, \mathbf{B} \in \mathbb{M}_{k \times m}(\mathbb{R})$, entonces 
 $$
-det(\mathbf{A}\mathbf{B^{t}}) = 
-\sum_\big{S \in \binom{\{1,\ldots, m\}}{k}} \det(\mathbf{A}|_{S}) \cdot \det(\mathbf{B}|_{S}).
+\det(\mathbf{A}\mathbf{B}^{\textnormal{T}}) = 
+\sum_{S \in \binom{\{1,\ldots, m\}}{k}} \det(\mathbf{A}|_{S}) \cdot \det(\mathbf{B}|_{S}).
 $$
 \end{teo}
 
@@ -228,7 +228,7 @@ Ya tenemos  todo lo necesario para poder expresar el número de árboles generad
 \begin{teo}[\textit{\textbf{El teorema Matriz-Árbol}}]
 Sea $G$ una gráfica conexa, con $n$ vértices y $m$ aristas. De igual manera, sea $\overrightarrow{G}$ una orientación cualquiera de $G$. Entonces
 $$
-t(G) = \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}(\widehat{\mathbf{M}}_{\overrightarrow{G}})^{\mathbf{t}}).
+t(G) = \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}(\widehat{\mathbf{M}}_{\overrightarrow{G}})^{\textnormal{T}}).
 $$
 \end{teo}
 
@@ -237,7 +237,7 @@ Ya sabemos que las submatrices de $\widehat{\mathbf{M}}_{\overrightarrow{G}}$  d
 
 Por la fórmula de Cauchy-Binet y porque $\widehat{\mathbf{M}}_{\overrightarrow{G}}$ es totalmente unimodular, tenemos:
 \begin{align*}
-    \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}(\widehat{\mathbf{M}}_{\overrightarrow{G}})^{\mathbf{t}}) &= \sum_\big{S \in \binom{\{1,\ldots, m\}}{n-1}} \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}|_{S}) \cdot \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}|_{S})\\ &= \sum_\big{S \in \binom{\{1,\ldots, m\}}{n-1}} (\det(\widehat{\mathbf{M}}_{\overrightarrow{G}[S]}))^{2} \\ &= \sum_\big{S \in \binom{\{1,\ldots, m\}}{n-1} \vspace{1em}}\{ 1 | \overrightarrow{G}[S] \textnormal{ es árbol generador} \} \\ &= t(G).
+    \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}(\widehat{\mathbf{M}}_{\overrightarrow{G}})^{\mathbf{t}}) &= \sum_{S \in \binom{\{1,\ldots, m\}}{n-1}} \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}|_{S}) \cdot \det(\widehat{\mathbf{M}}_{\overrightarrow{G}}|_{S})\\ &= \sum_{S \in \binom{\{1,\ldots, m\}}{n-1}} (\det(\widehat{\mathbf{M}}_{\overrightarrow{G}[S]}))^{2} \\ &= \sum_{S \in \binom{\{1,\ldots, m\}}{n-1} \vspace{1em}}\{ 1 | \overrightarrow{G}[S] \textnormal{ es árbol generador} \} \\ &= t(G).
 \end{align*}
 
 \end{proof}
@@ -390,11 +390,11 @@ Gracias a la herramientas desarrolladas en esta tesis, las leyes de Kirchhoff se
     \mathbf{M}\cdot\mathbf{i}(t) = \mathbf{0}.$$
     
     \item \textit{Ley de los voltajes de Kirchhoff:} Los voltajes de una red eléctrica forman una tensión de la digráfica asociada, o sea: $$
-    \mathbf{B}\cdot\mathbf{v}(t) = \mathbf{0}.$$
+    \mathbf{C}\cdot\mathbf{v}(t) = \mathbf{0}.$$
 \end{itemize}
 
 
-Parte del trabajo de Kirchhoff fue determinar qué ecuaciones de las corrientes y los voltajes eran linealmente independientes. Ahora podemos afirmar que, necesariamente, hay $n-1$ ecuaciones de las corrientes linealmente independientes; y $m -n +1$ ecuaciones de los voltajes linealmente independientes. Aún más, estas ecuaciones se obtienen a partir de un árbol generador de la red y considerando las matrices $\widehat{\mathbf{M}}$ y $\mathbf{B}_{f}$. 
+Parte del trabajo de Kirchhoff fue determinar qué ecuaciones de las corrientes y los voltajes eran linealmente independientes. Ahora podemos afirmar que, necesariamente, hay $n-1$ ecuaciones de las corrientes linealmente independientes; y $m -n +1$ ecuaciones de los voltajes linealmente independientes. Aún más, estas ecuaciones se obtienen a partir de un árbol generador de la red y considerando las matrices $\widehat{\mathbf{M}}$ y $\mathbf{C}_{f}$. 
 
 Hay una cantidad considerable de literatura que trata estos temas. El lector interesado puede consultar \cite{Deo,Seshu,Slepian,Chen}.
 
@@ -427,7 +427,7 @@ Si $G$ es plana, podemos construir otra gráfica $G^{*}$ donde sus vértices cor
     \label{fig:dual}
 \end{figure}
 
-Si $S\subseteq E(G)$, escribimos $S^{*} = \{e^{*} | e\in S\} \subseteq E(G^{*})$. Las propiedades más relevante que nos conciernen las enunciamos como un teorema y un corolario:
+Si $S\subseteq E(G)$, escribimos $S^{*} = \{e^{*} | e\in S\} \subseteq E(G^{*})$. Las propiedades más relevantes que nos conciernen son enunciadas como un teorema y un corolario:
 
 \begin{teo}
 Sea $G$ una gráfica plana y conexa y consideremos su dual $G^{*}$. Se cumple lo siguiente: 
@@ -474,7 +474,7 @@ Un \index{Flujo}\textit{flujo} en $N$ es una función $f\colon A(D) \rightarrow 
 
 Se dice que un flujo es \textit{factible} si satisface la \textit{restricción de capacidad}: $$0 \leq f(a) \leq c(a), \textnormal{ para todo } a \in A(D).$$
 
-un $s-t$ \textit{corte} en la red $N$ es un excorte $\partial^{+}(X)$ de su digráfica subyacente, de tal forma que $s \in X$ y $t\in \overline{X}$. La capacidad de un $s-t$ corte es la suma de las capacidades de sus arcos, es decir:$$cap(\partial^{+}(X)):=\sum_{a \in \partial^{+}(X)}c(a) = C^{+}(X).$$
+Un $s-t$ \textit{corte} en la red $N$ es un excorte $\partial^{+}(X)$ de su digráfica subyacente, de tal forma que $s \in X$ y $t\in \overline{X}$. La capacidad de un $s-t$ corte es la suma de las capacidades de sus arcos, es decir:$$cap(\partial^{+}(X)):=\sum_{a \in \partial^{+}(X)}c(a) = C^{+}(X).$$
 
 Por otro lado, dado $X\subseteq V(D)$, el \textit{flujo que sale} de $X$ es el número $F^{+}(X)- F^{-}(X)$ y el \textit{flujo que entra} en $X$ es $F^{-}(X)- F^{+}(X)$. Puede probarse que la cantidad  $F^{+}(X)- F^{-}(X)$ es constante, dado cualquier subconjunto $X$ que cumpla que $s \in X$ y $t\in \overline{X}$. Este número es el \textit{valor del flujo $f$} y se escribe $val(f)$.
 

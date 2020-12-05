@@ -185,7 +185,7 @@ En toda gráfica $G$, la dimensión de su espacio de ciclos $\mathcal{C}(G)$ es 
 
 \section{Vectores de incidencia}
 
-En el capítulo $1$ comentamos que si $V$ es un espacio vectorial sobre un campo $\mathbb{F}$ de dimensión $n$, entonces $V$ es isomorfo al espacio $\mathbb{F}^n$. Ahora aplicaremos esta idea a los espacios que hemos definido en las secciones pasadas.
+En el capítulo $1$ comentamos que si $V$ es un espacio vectorial sobre un campo $\mathbb{F}$ de dimensión $n$, entonces $V$ es isomorfo al espacio $\mathbb{F}^n$. Ahora aplicaremos esta idea a los espacios que hemos definido en las secciones anteriores.
 
 Sabemos que el espacio de aristas $\mathcal{E}(G)$ es de dimensión $m$ sobre el campo $GF(2)$. Se sigue entonces que $\mathcal{E}(G)$ es isomorfo a $(GF(2))^{m}$. 
 
@@ -640,9 +640,9 @@ $$\mathsf{R}(\mathbf{M}_{D}) = \mathsf{R}(\mathbf{M}_{\mathcal{F}_{1}}) \oplus \
 
  Así, $$\mathsf{R}(\mathbf{M}_{D}) = \mathcal{B}(\mathcal{F}_{1}) \oplus \cdots \oplus \mathcal{B}(\mathcal{F}_{c}).$$
 
-Por otro lado, tomemos $\mathbf{g} \in \mathsf{R}(\mathbf{M}_{D})$. Entonces existe $\mathbf{p} \in \mathbb{R}^{n}$ tal que $$\mathbf{g}^{\textnormal{T}} = \mathbf{p}^{\textnormal{T}}\mathbfM_{D}.$$ Dados los tamaños de las matrices, podemos partir a $\mathbf{g}$ y $\mathbf{p}$ como\\ $\mathbf{g}^{\textnormal{T}} = \begin{bmatrix}
+Por otro lado, tomemos $\mathbf{g} \in \mathsf{R}(\mathbf{M}_{D})$. Entonces existe $\mathbf{p} \in \mathbb{R}^{n}$ tal que $$\mathbf{g}^{\textnormal{T}} = \mathbf{p}^{\textnormal{T}}\mathbf{M}_{D}.$$ Dados los tamaños de las matrices, podemos partir a $\mathbf{g}$ y $\mathbf{p}$ como $\mathbf{g}^{\textnormal{T}} = \begin{bmatrix}
 \mathbf{g}_{1}^{\textnormal{T}} & \cdots  & \mathbf{g}_{c}^{\textnormal{T}} 
-\end{bmatrix}$ y $\mathbf{p}^{\textnormal{T}} = \begin{bmatrix}
+\end{bmatrix}$ y\\ $\mathbf{p}^{\textnormal{T}} = \begin{bmatrix}
 \mathbf{p}_{1}^{\textnormal{T}} & \cdots  & \mathbf{p}_{c}^{\textnormal{T}} 
 \end{bmatrix}$ de tal manera que:
 
@@ -696,7 +696,7 @@ Q^{-}(X) = \sum_{a \in \partial^{-}(X)} q(a).
 $$
 Analizando el producto $\mathbf{M}\mathbf{q}$ observamos que, tomando en cuenta la igualdad \ref{eq:mva} y fijando un vértice $v$, 
 $$
-\sum_{a \in A} m_{va}q(a) = \sum_{a \in \partial^{+}(v)} q(a) - \sum_{a \in \partial^{-}(v)} q(a) = Q^{+}(v) - Q^{-}(v).
+\sum_{a \in A} m_{va}q(a) = \mathbf{g}_{\partial(v)}^{\textnormal{T}} \cdot \mathbf{q} = \sum_{a \in \partial^{+}(v)} q(a) - \sum_{a \in \partial^{-}(v)} q(a) = Q^{+}(v) - Q^{-}(v).
 $$
 Por lo tanto,
 $$
@@ -744,23 +744,23 @@ En la imagen \ref{fig:circulacion} están dos ejemplos de circulaciones de la di
 
 Hay una manera de asociar circulaciones a los ciclos de la digráfica. Supongamos que $C$ es un ciclo contenido en $D$. Recordemos que en el capítulo $1$ mencionamos que $C$ puede ser recorrido, esencialmente, en dos direcciones: en sentido horario o en sentido antihorario (dependiendo del diagrama que representa al ciclo y de cómo se etiquetan los vértices). También comentamos que, al elegir un sentido para recorrer el ciclo, aquél induce dos subdigráficas de $C$:  la de los arcos hacia adelante $C^{+}$ y la de los arcos hacia atrás $C^{-}$.
 
-Dicho lo anterior, hacemos $f_{C} \colon A(D) \rightarrow \mathbb{R}$ dada por:
+Dicho lo anterior, escogemos un sentido para $C$ y hacemos $f_{C} \colon A(D) \rightarrow \mathbb{R}$ dada por:
 $$
-f_{C}(a)\left\{\begin{matrix}
-\quad 1, & a \in C^{+} \\ 
-\ -1, & a \in C^{-}\\ 
-\quad 0, &a \notin C.
+f_{C}(a)=\left\{\begin{matrix}
+\quad 1, & a \in A(C^{+}) \\ 
+\ -1, & a \in A(C^{-})\\ 
+\quad 0, &a \notin A(C).
 \end{matrix}\right.
 $$
 Veamos por qué, de hecho, $f_{C}$ es una circulación. Consideremos un vértice $v$ de $D$. Ya que $f_{C}$ se anula en arcos que no pertenecen a $C$, obtenemos que
 \begin{equation} \label{eq:cortescicloscasos}
     \begin{split}
                F^{+}(v) - F^{-}(v) &= \sum_{a \in \partial^{+}(v)} f_{C}(a) - \sum_{a \in \partial^{-}(v)} f_{C}(a) \\
-    &= \sum_{a \in \partial^{+}(v) \cap E(C)} f_{C}(a) - \sum_{a \in \partial^{-}(v) \cap E(C)} f_{C}(a) \\
-    &= \sum_{a \in \partial(v) \cap E(C)} f_{C}(a).
+    &= \sum_{a \in \partial^{+}(v) \cap A(C)} f_{C}(a) - \sum_{a \in \partial^{-}(v) \cap A(C)} f_{C}(a) \\
+    &= \sum_{a \in \partial(v) \cap A(C)} f_{C}(a).
     \end{split}
 \end{equation}
-Como sabemos que $|\partial(v) \cap E(C)| = 2$, asumiremos que $\partial(v) \cap E(C) = \{\alpha, \beta\}$. Entonces, escogiendo de antemano un sentido de recorrido para el ciclo $C$, tenemos cuatro casos (véase la figura \ref{fig:casoscortesciclos}). 
+Como sabemos que $|\partial(v) \cap A(C)| = 2$, asumiremos que $\partial(v) \cap A(C) = \{\alpha, \beta\}$. Entonces, escogiendo de antemano un sentido de recorrido para el ciclo $C$, tenemos cuatro casos (véase la figura \ref{fig:casoscortesciclos}). 
  \begin{figure}[H]
 %\vspace{-1.1cm}
 \centering
@@ -773,9 +773,9 @@ Como sabemos que $|\partial(v) \cap E(C)| = 2$, asumiremos que $\partial(v) \cap
 
 \item {Caso 2.} \textit{Que $\alpha \in \partial^{-}(X)$ y $\beta \in \partial^{+}(X)$}. Tenemos que $f_{C} (\alpha)= f_{C}(\beta) = -1$.
 
-\item {Caso 3.} $\{\alpha, \beta\} = \partial^{+}(v) \cap E(C)$. Deducimos que $f_{C}(\alpha)=1$ y $f_{C}(\beta)=-1.$
+\item {Caso 3.} $\{\alpha, \beta\} = \partial^{+}(v) \cap A(C)$. Deducimos que $f_{C}(\alpha)=1$ y $f_{C}(\beta)=-1.$
 
-\item {Caso 4.} $\{\alpha, \beta\} = \partial^{-}(v) \cap E(C)$. Puede verificarse que $f_{C}(\alpha)= -1$ y $f_{C}(\beta)=1.$ 
+\item {Caso 4.} $\{\alpha, \beta\} = \partial^{-}(v) \cap A(C)$. Puede verificarse que $f_{C}(\alpha)= -1$ y $f_{C}(\beta)=1.$ 
 \end{itemize}
 
 
@@ -950,7 +950,7 @@ Toda submatriz cuadrada, de tamaño $(n-c) \times (n-c)$, de la matriz de incide
 \section{Cortes y ciclos fundamentales en digráficas}
 Hasta el momento conocemos la dimensión de los espacios $\mathcal{B}(D)$ y $\mathcal{C}(D)$ e incluso aprendimos que las tensiones asociadas a cortes minimales y las circulaciones correspondientes a ciclos conformaban conjuntos generadores para dichos espacios. No obstante, todavía no hallamos sus bases. 
 
-En gráficas no dirigidas, los cortes y ciclos fundamentales resultar ser de gran utilidad pues resultaban ser bases para los espacios de corte y de ciclos, respectivamente. Veremos en esta sección cómo estos cortes y ciclos especiales nos permitirán construir sencillamente unas bases para los espacios $\mathcal{B}(D)$ y $\mathcal{C}(D)$.
+En gráficas no dirigidas, los cortes y ciclos fundamentales resultan ser de gran utilidad pues son bases para los espacios de corte y de ciclos, respectivamente. Veremos en esta sección cómo estos cortes y ciclos especiales nos permitirán construir sencillamente unas bases para los espacios $\mathcal{B}(D)$ y $\mathcal{C}(D)$.
 
 \subsection{Tensiones fundamentales}
 Supongamos primero que $D$ es conexa. Sea $T$ un árbol generador de $D$. Entonces $T$ define (en la forma como lo hicimos en el capítulo $2$) $n-1$ conjuntos de cortes fundamentales en $G[D]$, la gráfica subyacente de $D$. Considerando las direcciones de las aristas, también diremos que estos conjuntos son \textit{cortes fundamentales de $D$ asociados a $T$}.
@@ -962,15 +962,15 @@ En secciones previas, vimos a cualquier conjunto de corte se le puede asociar un
 Ahora bien, supóngase que se ordenan los arcos de $D$ de tal manera que $$A(D) = \{b_{1}, \ldots, b_{\rho}, c_{1}, \ldots, c_{\mu}\},$$ con $A(T) = \{b_{1}, \ldots, b_{\rho}\}$ y $A(\overline{T}) = \{c_{1}, \ldots, c_{\mu}\}$. Por otro lado, consideremos todos las tensiones fundamentales de $T$ y formamos una matriz $\mathbf{B}_{f}$ en la que cada renglón es una tensión fundamental, es decir, 
 $$
 \mathbf{B}_{f} := \begin{bmatrix}
-\mathbf{g}_{\mathscr{B}_{b_{1}}}^{\mathbf{t}} \\
+\mathbf{g}_{\mathscr{B}_{b_{1}}}^{\textnormal{T}} \\
 \-- \\
 \vdots \\
 \-- \\
-\mathbf{g}_{\mathscr{B}_{b_{\rho}}}^{\mathbf{t}}
+\mathbf{g}_{\mathscr{B}_{b_{\rho}}}^{\textnormal{T}}
 \end{bmatrix}.
 $$
 
-Recordemos que  $\mathscr{B}_{b} \cap T = b$ y es el único con esta propiedad. Ésto implica que, en la matriz $\mathbf{B}_{f}$, las columnas que corresponden a las ramas de $T$ sólo tienen un ``$1$'' en el renglón de la tensión fundamental asociada a $b$.  
+Recordemos que  $\mathscr{B}_{b} \cap A(T) = \{b\}$ y $b$ es el único arco con esta propiedad. Esto implica que, en la matriz $\mathbf{B}_{f}$, las columnas que corresponden a las ramas de $T$ sólo tienen un ``$1$'' en el renglón de la tensión fundamental asociada a $b$.  
 
 Por tanto, considerando el orden que le dimos a los arcos de $D$, la matriz $\mathbf{B}_{f}$ es de la forma:
 $$
@@ -978,25 +978,25 @@ $$
 \mathbf{I}_{\rho} & \mathbf{K} 
 \end{bmatrix}.
 $$
-Luego, $rank(\mathbf{B}_{f}) = \rho = n-1$. Ya que hay $n -1$ renglones en $\mathbf{B}_{f}$, éstos son linealmente independientes. Esto es, que el conjunto de tensiones fundamentales  $\{\mathbf{g}_{\mathscr{B}_{b_{1}}}, \ldots, \mathbf{g}_{\mathscr{B}_{b_{\rho}}} \}$ es linealmente independiente. Dado que $\dim(\mathcal{B}(D)) = n -1$, concluimos que el conjunto de tensiones fundamentales es una base de $\mathcal{B}(D)$.
+Luego, $rank(\mathbf{B}_{f}) = \rho = n-1$. Ya que hay $n -1$ renglones en $\mathbf{B}_{f}$, entonces éstos son linealmente independientes. Esto es, que el conjunto de tensiones fundamentales  $\{\mathbf{g}_{\mathscr{B}_{b_{1}}}, \ldots, \mathbf{g}_{\mathscr{B}_{b_{\rho}}} \}$ es linealmente independiente. Dado que $\dim(\mathcal{B}(D)) = n -1$, concluimos que el conjunto de tensiones fundamentales es una base de $\mathcal{B}(D)$.
 
 En el caso que $D = \bigcup_{i = 1}^{c} F_{i}$ sea inconexa, consideramos  un bosque generador maximal $T$ y las digráficas $\mathcal{F}_{i}$. Se toma la base de tensiones fundamentales con respecto a $T$, digamos $\gamma_{i}$, de cada $\mathcal{F}_{i}$. Como $\mathcal{B}(D) = \mathcal{B}(\mathcal{F}_{1}) \oplus \cdots \oplus \mathcal{B}(\mathcal{F}_{c})$, entonces sabemos que $\gamma = \bigcup_{i =1}^{c}\gamma_{i}$ es una base para $\mathcal{B}(D)$, con $n - c$ elementos.
 
 
 \subsection{Circulaciones fundamentales}
-El procedimiento que seguimos aquí es muy parecido al de la sección anterior. Los ciclo fundamentales de $D$ son aquellos correspondientes a su gráfica subyacente. 
+El procedimiento que seguimos aquí es muy parecido al de la subsección anterior. Los ciclo fundamentales de $D$ son aquellos correspondientes a su gráfica subyacente. 
 
-\index{Circulación! fundamental}Sea $c \in A(\overline{T})$ y consideramos su ciclo fundamental con respecto a $T$.  Tomamos su circulación asociada $\mathbf{f}_{\mathscr{C}_{c}}$ con la orientación tal que $f_{\mathscr{C}_{c}}(c)=1$ y llamamos \textit{circulación fundamental de $D$ con respecto a $T$}. Véase la figura \ref{fig:tensionescirculacionesfund}.
+\index{Circulación! fundamental}Sea $c \in A(\overline{T})$ y consideramos su ciclo fundamental con respecto a $T$.  Tomamos su circulación asociada $\mathbf{f}_{\mathscr{C}_{c}}$ con la orientación tal que $f_{\mathscr{C}_{c}}(c)=1$ y la llamamos \textit{circulación fundamental de $D$ con respecto a $T$}. Véase la figura \ref{fig:tensionescirculacionesfund}.
 
 Ordenamos los arcos de $D$ de al forma que $A(D) = A(\overline{T}) \cup A(T) $ con $A(\overline{T}) = \{c_{1}, \ldots, c_{\mu}\}$ y $A(T) = \{b_{1}, \ldots, b_{\rho}\}$. Acomodamos las circulaciones fundamentales como renglones de una matriz $\mathbf{C}_{f}$ de tal manera que:
 
 $$
 \mathbf{C}_{f} := \begin{bmatrix}
-\mathbf{f}_{\mathscr{C}_{c_{1}}}^{\mathbf{t}} \\
+\mathbf{f}_{\mathscr{C}_{c_{1}}}^{\textbf{T}} \\
 \-- \\
 \vdots \\
 \-- \\
-\mathbf{f}_{\mathscr{C}_{c_{\mu}}}^{\mathbf{t}}
+\mathbf{f}_{\mathscr{C}_{c_{\mu}}}^{\textbf{T}}
 \end{bmatrix}.
 $$
 

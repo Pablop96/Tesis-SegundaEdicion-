@@ -296,7 +296,7 @@
 
         \subsection{Gráficas} \label{sec:queesunagrafica}
 
-            Con lo comentado en los párrafos anteriores, decimos que una \textit{gráfica} \index{Gráfica} $G$ es un par ordenado $(V(G), E(G))$ que consiste de un conjunto $V(G)$ de \textnormal{vértices} \index{Vértice! de una gráfica} y un conjunto $E(G)$ de \textnormal{aristas}\index{Arista! de una gráfica} (ajeno con $V(G)$); junto con una \textnormal{función de incidencia} \index{Función de incidencia! de una gráfica }$\psi_{G} \colon E(G) \rightarrow \binom{V(G)}{1} \cup \binom{V(G)}{2}$ que asocia a cada arista de $G$ un par no ordenado de vértices de $G$ (no necesariamente distintos).Véase el ejemplo \ref{ejem:def}.
+            Con lo comentado en los párrafos anteriores, decimos que una \textit{gráfica} \index{Gráfica} $G$ es un par ordenado $(V(G), E(G))$ que consiste de un conjunto $V(G)$ de \textit{vértices} \index{Vértice! de una gráfica} y un conjunto $E(G)$ de \textit{aristas}\index{Arista! de una gráfica} (ajeno con $V(G)$); junto con una \textit{función de incidencia} \index{Función de incidencia! de una gráfica }$\psi_{G} \colon E(G) \rightarrow \binom{V(G)}{1} \cup \binom{V(G)}{2}$ que asocia a cada arista de $G$ un par no ordenado de vértices de $G$ (no necesariamente distintos).Véase el ejemplo \ref{ejem:def}.
 
             Si $e$ es una arista y $u$ y $v$ son vértices de $G$ de tal manera que $\psi_{G}(e)=\{u,v\}$, entonces a $u$ y $v$ les llamamos \textit{extremos} \index{Vértice! extremo} de $e$. También es común decir que $e$ \textit{une} a los vértices $u$ y $v$, y que $u$ es adyacente a $v$ (y viceversa). De igual modo, cuando varias aristas comparten un extremo, decimos que tales aristas son adyacentes. \index{Vértices adyacentes} \index{Aristas adyacentes}
  
@@ -477,7 +477,7 @@ Si $e \in E(G)$, entonces $G\setminus e$ es la gráfica que resulta de remover l
 \end{wrapfigure}
 Un \textit{bosque}\index{Bosque} es una gráfica sin ciclos (\textit{acíclica}). Si un bosque es conexo, se le dice \textit{árbol}. \index{\'{A}rbol} Luego, un árbol es una gráfica conexa sin ciclos. Se desprende de aquí que las componentes conexas de los bosques son, precisamente, árboles. Un  árbol que consta de un sólo vértice es un \textit{árbol trivial}. En caso contrario, es \textit{no trivial}. Desde luego, un \textit{bosque trivial} se compone de árboles triviales. 
 
-Los árboles son la columna vertebral de las gráficas. Su importancia es enorme  debido a sus aplicaciones. Varios resultados provienen de este concepto. De hecho, jugarán un papel clave en esta tesis. En lo que sigue mencionaremos algunas de sus propiedades.
+Los árboles son la columna vertebral de las gráficas. Su importancia es enorme  debido a sus aplicaciones. Varios resultados provienen de este concepto. De hecho, jugarán un papel clave en esta tesis. En lo que sigue mencionaremos algunas de sus propiedades. En \cite{Diestel} pueden hallarse las demostraciones de los teoremas que enunciaremos en esta subsección.
 
 \begin{prop}\label{prop:treepath}
 Dos vértices cualesquiera en un árbol están conectados por una única trayectoria.
